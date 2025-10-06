@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import platform
 import logging
 from datetime import datetime
