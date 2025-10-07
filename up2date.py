@@ -20,7 +20,7 @@ def detect_system():
         with open("/etc/os-release") as f:
             for line in f:
                 if line.split("=")[0] == "ID":
-                    os = line.split("=")[1].strip()
+                    os = line.split("=")[1].strip("\"\n")
                 if line.split("=")[0] == "VERSION_ID":
                     version = line.split("=")[1].strip("\"\n")
 
