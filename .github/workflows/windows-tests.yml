@@ -25,7 +25,6 @@ jobs:
       - name: Install dependencies (falls du requirements.txt hast)
         run: |
           if exist requirements.txt pip install -r requirements.txt
-        shell: cmd
 
       - name: Run tests
         run: |
