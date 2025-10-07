@@ -22,9 +22,21 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies (falls du requirements.txt hast)
+      # Linux/macOS
+      - name: Install dependencies (bash)
+        if: runner.os != 'Windows'
         run: |
-          if exist requirements.txt pip install -r requirements.txt
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        shell: bash
+
+      # Windows
+      - name: Install dependencies (PowerShell)
+        if: runner.os == 'Windows'
+        run: |
+          if (Test-Path "requirements.txt") {
+            pip install -r requirements.txt
+          }
+        shell: pwsh
 
       - name: Run tests
         run: |
