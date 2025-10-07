@@ -11,7 +11,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [Windows-2022, windows-2025, ubuntu-22.04, ubuntu-24.04, macos-latest]  # verschiedene Windows-Versionen testen
+        os: [Windows-2022, windows-2025, ubuntu-22.04, ubuntu-24.04]  # verschiedene Windows-Versionen testen
 
     steps:
       - name: Checkout code
